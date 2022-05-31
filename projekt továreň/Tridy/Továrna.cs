@@ -9,7 +9,10 @@ namespace projekt_továreň.Tridy
     internal class Továrna
     {
         Dictionary<string, string> Tovarna = new Dictionary<string, string>();
-        string  Model 3;
-        string 
+
+
+        
+        
+        
     }
 }
