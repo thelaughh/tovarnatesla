@@ -1,4 +1,7 @@
-﻿using projekttovarna;
+﻿using projekt_továreň.Tridy;
+using projekttovarna;
+
+Továrna továrna = new Továrna();
 Console.WriteLine("Vítejte v továrně Tesla");
 Console.WriteLine("V nabidce máme");
 

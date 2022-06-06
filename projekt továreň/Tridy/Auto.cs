@@ -16,7 +16,7 @@ namespace projekttovarna.Tridy
         public string druhpohonu { get; set; }
         public string Cena { get; set; }
         public string obrazek { get; set; }
-        public znacka()
+        public Auto()
         {
             Console.WriteLine("Objekt Vytvořen");
         }
