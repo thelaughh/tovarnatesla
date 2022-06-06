@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace projekt_továreň.Tridy
 {
     internal class Továrna
@@ -35,11 +36,11 @@ namespace projekt_továreň.Tridy
             <body>
             <h1>Továrna na auta</h1>
             <h2 style='color:blue;'>{vyrobeneAuto.Znacka}</h2>
-            <h2>{vyrobeneAuto.Auto}</h2>
-            <h2>Počet sedaček: {vyrobeneAuto.PocetSedadel1}</h2>
-            <h2>Druh pohonu: {vyrobeneAuto.DruhPohonu}</h2>
-            <img  src='{vyrobeneAuto.Obrazek}'>
-            <h3>Rok výroby: {vyrobeneAuto.RokVyroby}</h3>
+            <h2>{vyrobeneAuto.model}</h2>
+            <h2>Počet sedaček: {vyrobeneAuto.pocetsedadel}</h2>
+            <h2>Druh pohonu: {vyrobeneAuto.druhpohonu}</h2>
+            <img  src='{vyrobeneAuto.obrazek}'>
+            <h3>Rok výroby: {vyrobeneAuto.rokvyroby}</h3>
             <hr>
             <div>
             Cena: <h4 style='color: orange;'>{vyrobeneAuto.Cena}</h4>
@@ -47,13 +48,14 @@ namespace projekt_továreň.Tridy
             </body>
             </html>";
             File.WriteAllText("index.html", html);
+        }
+        public void ZobrazStranku(string adresaSouboru)
+        {
+            var process = new System.Diagnostics. ProcessStartInfo();
+            process.UseShellExecute = true;
+            process.FileName = adresaSouboru;
+            System.Diagnostics.Process.Start(process);
+        }
 
-            public void ZobrazStranku(string adresaSouboru)
-            {
-                var process = new System.Diagnostics. ProcessStartInfo();
-                process.UseShellExecute = true;
-                process.UseShellExecute = adresaSouboru;
-                System.Diagnostics.Process.Start(process);
-            }
     }
 }
