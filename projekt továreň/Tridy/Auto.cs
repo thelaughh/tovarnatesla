@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace projekttovarna.Tridy
+namespace projekttovarna
 {
     internal class Auto
     {
@@ -14,11 +14,11 @@ namespace projekttovarna.Tridy
         public string model { get; set; }
         public int pocetsedadel { get; set; }
         public string druhpohonu { get; set; }
-        public string Cena { get; set; }
+        public int Cena { get; set; }
         public string obrazek { get; set; }
         #endregion Vlastnosti
 
-        public Auto()
+        public void tesla()
         {
             Console.WriteLine("Objekt Vytvořen");
         }
