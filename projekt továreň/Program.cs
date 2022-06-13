@@ -17,7 +17,8 @@ if (input == "1")
 if (input == "2")
 {
     Auto vytvoreneAuto = new Auto();
-    továrnaTesla.VytvorStranku(vytvoreneAuto.VytvorAuto);
+    vytvoreneAuto = továrnaTesla.VytvorAuto();
+    továrnaTesla.VytvorStranku(vytvoreneAuto);
 
     Console.WriteLine("Chcete zobrazit vámi vytvořené auto: y/n");
     string input2 = Console.ReadLine();

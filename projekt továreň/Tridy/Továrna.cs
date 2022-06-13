@@ -45,13 +45,13 @@ namespace projekt_továreň.Tridy
             #region model
             while (true)
             {
-                Console.WriteLine("Zadej model : (zadejte přesný název");
+                Console.WriteLine("Zadej model : (zadejte přesný název)");
                 vyrabeneAuto.model = Console.ReadLine();
-                if (!this.TeslaIndustries.ContainsKey(vyrabeneAuto.model))
+                if (this.TeslaIndustries.ContainsKey(vyrabeneAuto.model))
                 {
-                    Console.WriteLine("error");
-                    continue;
+                    break;
                 }
+                Console.WriteLine("error, bad hodnota");
             }
             #endregion model
             #region pocetsedadel
@@ -59,11 +59,11 @@ namespace projekt_továreň.Tridy
             {
                 Console.WriteLine("Zadej počet sedadel");
                 vyrabeneAuto.pocetsedadel = Convert.ToInt32(Console.ReadLine());
-                if (vyrabeneAuto.pocetsedadel < 4 || vyrabeneAuto.pocetsedadel > 8)
+                if (vyrabeneAuto.pocetsedadel > 4  && vyrabeneAuto.pocetsedadel < 8)
                 {
-                    Console.WriteLine("error");
-                    continue;
+                    break;
                 }
+                Console.WriteLine("error, bad hodnota");
             }
             #endregion pocetsedadel
             #region druhpohonu
@@ -73,12 +73,11 @@ namespace projekt_továreň.Tridy
                 Console.WriteLine("Zadej druh pohonu");
                 Console.WriteLine("Elektrický/Hybridní");
                 vyrabeneAuto.druhpohonu = Console.ReadLine();
-                if (vyrabeneAuto.druhpohonu !=  "elektrický" && vyrabeneAuto.druhpohonu != "Hybridní")
+                if (vyrabeneAuto.druhpohonu ==  "elektrický" || vyrabeneAuto.druhpohonu == "Hybridní")
                 {
-                    Console.WriteLine("error");
-                    continue;
-
+                    break;
                 }
+                Console.WriteLine("error, bad hodnota");
 
             }
             #endregion druhpohonu
@@ -88,8 +87,8 @@ namespace projekt_továreň.Tridy
                 vyrabeneAuto.obrazek = TeslaIndustries[vyrabeneAuto.model];
 
                 return vyrabeneAuto;
-            }
         }
+        
 
         public void VytvorStranku(Auto vyrobeneAuto)
         {
@@ -110,7 +109,6 @@ namespace projekt_továreň.Tridy
             </body>
             </html>";
             File.WriteAllText("index.html", html);
-            return;
         }
         public void ZobrazStranku(string adresaSouboru)
         {
@@ -118,9 +116,8 @@ namespace projekt_továreň.Tridy
             process.UseShellExecute = true;
             process.FileName = adresaSouboru;
             System.Diagnostics.Process.Start(process);
-            return;
         }
-
     }
 }
+
 
